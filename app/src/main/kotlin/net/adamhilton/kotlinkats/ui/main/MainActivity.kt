@@ -8,6 +8,7 @@ import butterknife.OnClick
 import com.squareup.picasso.MemoryPolicy
 import com.squareup.picasso.NetworkPolicy
 import com.squareup.picasso.Picasso
+import net.adamhilton.kotlinkats.KotlinKatsApp
 import net.adamhilton.kotlinkats.R
 import net.adamhilton.kotlinkats.ui.base.BaseActivity
 
@@ -36,7 +37,7 @@ class MainActivity : BaseActivity() {
     }
 
     private fun loadCatPic() {
-        Picasso.with(this)
+        KotlinKatsApp.Picasso
                 .load(url)
                 .placeholder(R.drawable.loading_animation)
                 .error(R.drawable.ic_error_black_48dp)
