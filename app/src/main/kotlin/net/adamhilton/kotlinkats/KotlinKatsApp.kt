@@ -6,13 +6,11 @@ import net.adamhilton.kotlinkats.injection.component.DaggerAppComponent
 import net.adamhilton.kotlinkats.injection.module.AppModule
 import timber.log.Timber
 
-
-
 class KotlinKatsApp : Application() {
 
     companion object {
-        @JvmStatic lateinit private var Instance: KotlinKatsApp
-        @JvmStatic lateinit private var AppComponent: AppComponent
+        @JvmStatic lateinit var Instance: KotlinKatsApp
+        @JvmStatic lateinit var AppComponent: AppComponent
     }
 
     override fun onCreate() {

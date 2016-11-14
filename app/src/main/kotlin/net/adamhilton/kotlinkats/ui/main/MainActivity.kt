@@ -1,7 +1,6 @@
 package net.adamhilton.kotlinkats.ui.main
 
 import android.os.Bundle
-import android.support.v7.app.AppCompatActivity
 import android.widget.ImageView
 import butterknife.BindView
 import butterknife.ButterKnife
@@ -9,11 +8,10 @@ import butterknife.OnClick
 import com.squareup.picasso.MemoryPolicy
 import com.squareup.picasso.NetworkPolicy
 import com.squareup.picasso.Picasso
-import net.adamhilton.kotlinkats.KotlinKatsApp
 import net.adamhilton.kotlinkats.R
+import net.adamhilton.kotlinkats.ui.base.BaseActivity
 
-
-class MainActivity : AppCompatActivity() {
+class MainActivity : BaseActivity() {
 
     private val url = "http://thecatapi.com/api/images/get"
 
@@ -23,6 +21,7 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        ActivityComponent.inject(this)
         ButterKnife.bind(this)
         initializeUi()
     }
