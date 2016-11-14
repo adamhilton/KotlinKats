@@ -1,10 +1,8 @@
 package net.adamhilton.kotlinkats.ui.main
 
-import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
+import android.support.v7.app.AppCompatActivity
 import android.widget.ImageView
-import android.widget.Toast
 import butterknife.BindView
 import butterknife.ButterKnife
 import butterknife.OnClick
@@ -12,7 +10,7 @@ import com.squareup.picasso.MemoryPolicy
 import com.squareup.picasso.NetworkPolicy
 import com.squareup.picasso.Picasso
 import net.adamhilton.kotlinkats.R
-import timber.log.Timber
+
 
 class MainActivity : AppCompatActivity() {
 
@@ -32,7 +30,7 @@ class MainActivity : AppCompatActivity() {
         loadCatPic()
     }
 
-    @OnClick(R.id.cat_pic)
+    @OnClick(R.id.activity_main)
     fun onCatPicClicked() {
         loadCatPic()
     }
@@ -41,8 +39,10 @@ class MainActivity : AppCompatActivity() {
         Picasso.with(this)
                 .load(url)
                 .placeholder(R.drawable.loading_animation)
-                .memoryPolicy(MemoryPolicy.NO_CACHE )
+                .error(R.drawable.ic_error_black_48dp)
+                .memoryPolicy(MemoryPolicy.NO_CACHE)
                 .networkPolicy(NetworkPolicy.NO_CACHE)
                 .into(catPic)
     }
 }
+
