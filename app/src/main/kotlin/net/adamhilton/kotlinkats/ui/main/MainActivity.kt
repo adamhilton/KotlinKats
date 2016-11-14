@@ -9,6 +9,7 @@ import butterknife.OnClick
 import com.squareup.picasso.MemoryPolicy
 import com.squareup.picasso.NetworkPolicy
 import com.squareup.picasso.Picasso
+import net.adamhilton.kotlinkats.KotlinKatsApp
 import net.adamhilton.kotlinkats.R
 
 
